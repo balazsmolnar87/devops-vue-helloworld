@@ -18,8 +18,9 @@ export default {
   methods: {
     async fetchMessage() {
       try {
-        const response = await fetch(import.meta.env.VITE_API_URL);
-        const data = await response.json();
+        console.log("import.meta.env.VITE_API_URL: ", import.meta.env.VITE_API_URL);
+        let response = await fetch(import.meta.env.VITE_API_URL);
+        let data = await response.json();
         this.message = data.message;
       } catch (error) {
         console.error('Error fetching message:', error);
