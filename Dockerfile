@@ -1,10 +1,12 @@
 FROM node:iron-alpine3.20
 
+RUN apk add curl
+
 # Set the working directory
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package.json .
+COPY package.json package-lock.json ./
 
 # Install dependencies
 RUN npm install
