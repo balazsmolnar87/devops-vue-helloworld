@@ -1,12 +1,12 @@
 FROM node:iron-alpine3.20
 
-RUN apk add curl
-
 WORKDIR /app
 
 COPY package.json .
 
 RUN npm install
+
+ENV VITE_API_URL=http://localhost:8080
 
 RUN npm i -g serve
 
